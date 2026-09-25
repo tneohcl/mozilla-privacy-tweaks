@@ -73,10 +73,9 @@ Each of these was tried or reviewed and rejected because it costs daily friction
 
 ## History
 
-This replaces my earlier separate repos,
-[`firefox-user.js`](https://github.com/tneohcl/firefox-user.js) and
-[`thunderbird_user.js`](https://github.com/tneohcl/thunderbird_user.js), which are
-now archived.
+This replaces my earlier separate `firefox-user.js` and `thunderbird_user.js`
+repos, which have been retired. The files here are the maintained versions,
+with bugs from the old Thunderbird file fixed.
 
 ## License
 
