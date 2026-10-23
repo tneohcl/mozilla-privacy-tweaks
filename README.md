@@ -10,7 +10,7 @@ per-site exceptions or daily fiddling.
 | File | Prefs | Highlights |
 |---|---|---|
 | [`firefox/user.js`](firefox/user.js) | 85 | Strict tracking protection, HTTPS-Only, DNS over HTTPS, telemetry/studies off, no sponsored content, no speculative connections, password manager and Sync off, AI features off (on-device Translations kept) |
-| [`thunderbird/user.js`](thunderbird/user.js) | 46 | Remote images blocked, no read receipts, phishing checks, no User-Agent/hostname leaks in outgoing mail, DNS over HTTPS, telemetry and nags off |
+| [`thunderbird/user.js`](thunderbird/user.js) | 45 | Remote images blocked, no read receipts, phishing checks, no User-Agent/hostname leaks in outgoing mail, DNS over HTTPS, telemetry and nags off, Thundermail/Donate prompts hidden, Chat off |
 
 ## Install
 
@@ -69,7 +69,7 @@ Each of these was tried or reviewed and rejected because it costs daily friction
   `Date` header in UTC, so outgoing mail doesn't reveal your machine name or time zone.
 - Remote images in mail stay blocked by default. Allow them per sender from the
   message bar when you trust someone.
-- Tested with Firefox 156 and Thunderbird 156 (Flatpak) on Fedora 44.
+- Tested with Firefox 158 and Thunderbird 158 (Flatpak) on Fedora 44.
 
 ## History
 
