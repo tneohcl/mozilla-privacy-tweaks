@@ -9,7 +9,7 @@ per-site exceptions or daily fiddling.
 
 | File | Prefs | Highlights |
 |---|---|---|
-| [`firefox/user.js`](firefox/user.js) | 67 | Strict tracking protection, HTTPS-Only, DNS over HTTPS, telemetry/studies off, no sponsored content, no speculative connections, password manager, Sync and AI chatbot off |
+| [`firefox/user.js`](firefox/user.js) | 85 | Strict tracking protection, HTTPS-Only, DNS over HTTPS, telemetry/studies off, no sponsored content, no speculative connections, password manager and Sync off, AI features off (on-device Translations kept) |
 | [`thunderbird/user.js`](thunderbird/user.js) | 46 | Remote images blocked, no read receipts, phishing checks, no User-Agent/hostname leaks in outgoing mail, DNS over HTTPS, telemetry and nags off |
 
 ## Install

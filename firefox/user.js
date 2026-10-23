@@ -4,12 +4,11 @@
 // --- Tracking protection ---
 user_pref("browser.contentblocking.category", "strict");
 user_pref("privacy.globalprivacycontrol.enabled", true);
-user_pref("dom.private-attribution.submission.enabled", false);
 
 // --- DNS over HTTPS: NextDNS, fall back to system DNS ---
 // Works as-is (NextDNS without a profile = plain encrypted DNS, no filtering).
-// For your own NextDNS filtering, append your profile ID to both URIs:
-//   https://dns.nextdns.io/<your-id>
+// For your own NextDNS filtering, append your profile ID (and optionally a device name) to both URIs:
+//   https://dns.nextdns.io/<your-id>/<device-name>
 user_pref("network.trr.mode", 2);
 user_pref("network.trr.uri", "https://dns.nextdns.io");
 user_pref("network.trr.custom_uri", "https://dns.nextdns.io");
@@ -41,7 +40,6 @@ user_pref("app.normandy.api_url", "");
 user_pref("breakpad.reportURL", "");
 user_pref("browser.tabs.crashReporting.sendReport", false);
 user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
-user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 user_pref("browser.newtabpage.activity-stream.telemetry", false);
 
 // --- Sponsored content / recommendations ---
@@ -59,7 +57,6 @@ user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", 
 // --- Background / speculative connections ---
 user_pref("network.prefetch-next", false);
 user_pref("network.dns.disablePrefetch", true);
-user_pref("network.predictor.enabled", false);
 user_pref("browser.urlbar.speculativeConnect.enabled", false);
 user_pref("browser.places.speculativeConnect.enabled", false);
 user_pref("network.captive-portal-service.enabled", false);
@@ -88,3 +85,27 @@ user_pref("browser.ml.chat.enabled", false);            // AI chatbot sidebar
 user_pref("browser.vpn_promo.enabled", false);          // Mozilla VPN promos
 user_pref("toolkit.telemetry.server", "data:,");        // blackhole any stray telemetry
 user_pref("network.http.speculative-parallel-limit", 0); // no speculative connections on link hover
+
+// --- AI features off (except Translations), mirrors Settings > AI controls > Block (2026-10-23, Firefox 158) ---
+// Each feature gates on its own pref; browser.ai.control.default alone does not switch them off.
+user_pref("browser.ai.control.default", "blocked");
+user_pref("browser.ai.control.translations", "available");      // keep on-device translation (separate engine)
+user_pref("browser.ai.control.linkPreviewKeyPoints", "blocked");
+user_pref("browser.ml.linkPreview.enabled", false);
+user_pref("browser.ml.linkPreview.optin", false);
+user_pref("browser.ai.control.pdfjsAltText", "blocked");
+user_pref("pdfjs.enableAltText", false);
+user_pref("pdfjs.enableGuessAltText", false);
+user_pref("pdfjs.enableAltTextModelDownload", false);
+user_pref("browser.ai.control.smartTabGroups", "blocked");
+user_pref("browser.tabs.groups.smart.enabled", false);
+user_pref("browser.tabs.groups.smart.userEnabled", false);
+user_pref("browser.tabs.groups.smart.optin", false);
+user_pref("browser.ai.control.sidebarChatbot", "blocked");
+user_pref("browser.ml.chat.page", false);
+user_pref("browser.ai.control.smartWindow", "blocked");
+user_pref("browser.smartwindow.memories.generateFromConversation", false);
+user_pref("browser.smartwindow.memories.generateFromHistory", false);
+user_pref("browser.ai.control.speechRecognition", "blocked");
+user_pref("extensions.ml.enabled", false);                      // AI API for add-ons
+user_pref("browser.ml.enable", false);                          // on-device AI engine (Translations uses its own)
